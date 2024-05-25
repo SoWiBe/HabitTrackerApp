@@ -9,4 +9,7 @@
     <SolidColorBrush Color="#777777" x:Key="AlternativeBackgroundColor" />
     <SolidColorBrush Color="#DDDDDD" x:Key="RowColor" />
     
+    <Color x:Key="MainColor">#ffffff</Color>
+    <Color x:Key="AlternativeColor">#777777</Color>
+    
 </ResourceDictionary>

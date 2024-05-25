@@ -27,8 +27,9 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0"
-                                Height="50" Width="Auto"
-                                Style="{DynamicResource CellBorder}">
+                                Height="50" Width="250"
+                                Style="{DynamicResource CellBorder}"
+                                Background="{Binding BackgroundColor}">
                             <TextBlock 
                                 Padding="5"
                                 HorizontalAlignment="Center"
@@ -44,6 +45,5 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-
     </Grid>
 </Window>
