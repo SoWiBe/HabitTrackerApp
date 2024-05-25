@@ -37,7 +37,7 @@
                                 Text="{Binding Habit.Title}"
                                 VerticalAlignment="Center">
                                 <TextBlock.InputBindings>
-                                    <MouseBinding MouseAction="LeftClick" />
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
                                 </TextBlock.InputBindings>
                             </TextBlock>
                         </Border>

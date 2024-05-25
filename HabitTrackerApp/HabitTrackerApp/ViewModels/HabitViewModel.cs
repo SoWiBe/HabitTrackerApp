@@ -1,5 +1,7 @@
-﻿using System.Windows.Media;
+﻿using System.Windows;
+using System.Windows.Media;
 using HabitTrackerApp.Abstractions;
+using HabitTrackerApp.Commands;
 using HabitTrackerApp.Models;
 using HabitTrackerApp.ViewModels.Core;
 
@@ -9,6 +11,7 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
 {
     private Habit? _habit;
     private SolidColorBrush _backgroundColor;
+    private RelayCommand _createHabitCommand;
     public HabitViewModel(SolidColorBrush color, Habit? habit = null)
     {
         _habit = habit;
@@ -30,5 +33,19 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
     {
         get => _backgroundColor;
         set => SetProperty(ref _backgroundColor, value);
+    }
+
+    public RelayCommand CreateHabitCommand => _createHabitCommand ??= new RelayCommand(_ => CreateHabit());
+
+    private void CreateHabit()
+    {
+        var habit = new Habit
+        {
+            Title = "Test",
+            CountDays = 11
+        };
+        
+        _habit = habit;
+        RaisePropertyChanged(nameof(Habit));
     }
 }
