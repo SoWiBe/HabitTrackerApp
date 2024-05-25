@@ -46,3 +46,7 @@ C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\HabitTrackerApp.pdb
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\HabitTrackerApp.genruntimeconfig.cache
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\ref\HabitTrackerApp.dll
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\UI\Colors\ColorsDictionary.baml
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\UI\Templates\TextBlocksTemplates.baml
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\App.baml
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\UI\Templates\BordersTemplates.baml

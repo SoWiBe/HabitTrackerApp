@@ -18,7 +18,7 @@ public class MainViewModel : BaseViewModel, IMainVm
     
     public MainViewModel()
     {
-        SetHabits();
+        
     }
 
     public string Title
@@ -49,7 +49,7 @@ public class MainViewModel : BaseViewModel, IMainVm
     {
         for (int i = 0; i < 12; i++)
         {
-            var habit = new Habit { Title = $"{i}", CountDays = 0};
+            var habit = new Habit { Title = $"Habit {i}", CountDays = 0};
             _habits.Add(habit);
         }
     }

@@ -9,8 +9,6 @@
 
     <ItemGroup>
       <Folder Include="Resources\Images\" />
-      <Folder Include="UI\Colors\" />
-      <Folder Include="UI\Templates\" />
       <Folder Include="UI\Themes\" />
     </ItemGroup>
 

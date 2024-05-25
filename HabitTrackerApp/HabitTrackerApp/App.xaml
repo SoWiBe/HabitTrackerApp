@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:HabitTrackerApp"
              StartupUri="/UI/Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UI/Colors/ColorsDictionary.xaml" />
+                <ResourceDictionary Source="/UI/Templates/TextBlocksTemplates.xaml" />
+                <ResourceDictionary Source="/UI/Templates/BordersTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
