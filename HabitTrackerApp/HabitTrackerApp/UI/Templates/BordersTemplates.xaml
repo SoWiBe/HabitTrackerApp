@@ -12,7 +12,7 @@
     <!-- Create Habit Border -->
     <Style TargetType="Border" x:Key="CreateHabitBorder">
         <Setter Property="BorderBrush" Value="{DynamicResource RowColor}" />
-        <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="CornerRadius" Value="0" />
         <Setter Property="BorderThickness" Value="1" />
     </Style>
 </ResourceDictionary>

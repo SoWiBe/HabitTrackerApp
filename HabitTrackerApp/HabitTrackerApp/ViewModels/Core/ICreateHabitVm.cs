@@ -2,5 +2,5 @@
 
 public interface ICreateHabitVm
 {
-    
+    public string Title { get; set; }
 }
