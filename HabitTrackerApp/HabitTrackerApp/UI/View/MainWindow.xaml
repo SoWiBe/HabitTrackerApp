@@ -11,6 +11,22 @@
         <viewModels:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <TextBlock Text="{Binding Title}"/>
+        <ItemsControl ItemsSource="{Binding Habits, UpdateSourceTrigger=PropertyChanged}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Margin="0,0,0,18"
+                        Style="{DynamicResource ResourceKey=CategoriesCustomTextBlock}"
+                        Text="{Binding Name}"
+                        VerticalAlignment="Top">
+                        <TextBlock.InputBindings>
+                            <MouseBinding Command="{Binding }" MouseAction="LeftClick" />
+                        </TextBlock.InputBindings>
+                    </TextBlock>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
     </Grid>
 </Window>

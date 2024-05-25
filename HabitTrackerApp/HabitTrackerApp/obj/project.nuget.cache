@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t3rK26J1NlrWFdfj36+RY1i1PryIB8hlpRi9Kn4q7Qf9Fux29fHz3i9tocnb3AZy9GhKUA7bLnXFApL4LUUfiQ==",
+  "dgSpecHash": "DrHEFOwaiFtqP0H4Zr6+yzkKUZz6FvrAlnEDW2hItUto1xphPQrGH89D+z8XWt0xF1Vqoxua15T29H/yp96abA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aleks\\RiderProjects\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
+  "projectFilePath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aleks\\.nuget\\packages\\autofac\\8.0.0\\autofac.8.0.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512"
