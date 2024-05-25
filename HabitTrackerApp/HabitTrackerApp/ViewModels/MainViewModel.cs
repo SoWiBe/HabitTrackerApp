@@ -48,10 +48,8 @@ public class MainViewModel : BaseViewModel, IMainVm
                 if (i % 2 != 0)
                     color = _secondColor;
                 
-                var habitVm =
-                    AutoFac.Default.Container.Resolve<IHabitVm>(new TypedParameter(typeof(SolidColorBrush
-
-), color));
+                var habitVm = AutoFac.Default.Container.Resolve<IHabitVm>(
+                    new TypedParameter(typeof(SolidColorBrush), color));
                 _habitVms.Add(habitVm);
             }
 

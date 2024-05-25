@@ -3,6 +3,7 @@ using System.Windows.Media;
 using HabitTrackerApp.Abstractions;
 using HabitTrackerApp.Commands;
 using HabitTrackerApp.Models;
+using HabitTrackerApp.UI.Views.Popups;
 using HabitTrackerApp.ViewModels.Core;
 
 namespace HabitTrackerApp.ViewModels;
@@ -39,6 +40,9 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
 
     private void CreateHabit()
     {
+        var popup = new CreateHabitPopup();
+        popup.ShowDialog();
+        
         var habit = new Habit
         {
             Title = "Test",

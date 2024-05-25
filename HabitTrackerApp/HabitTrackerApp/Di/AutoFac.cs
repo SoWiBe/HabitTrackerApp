@@ -21,6 +21,7 @@ public class AutoFac
         
         builder.RegisterType<MainViewModel>().As<IMainVm>();
         builder.RegisterType<HabitViewModel>().As<IHabitVm>();
+        builder.RegisterType<CreateHabitViewModel>().As<ICreateHabitVm>();
         
         return builder.Build();
     }
