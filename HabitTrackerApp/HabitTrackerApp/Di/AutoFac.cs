@@ -7,6 +7,13 @@ namespace HabitTrackerApp.Di;
 public class AutoFac
 {
     public static AutoFac Default = new();
+
+    private AutoFac()
+    {
+        var builder = new ContainerBuilder();
+        builder.RegisterType<HabitViewModel>().As<IHabitVm>();
+        Container = builder.Build();
+    }
     
     public static IContainer Configure()
     {

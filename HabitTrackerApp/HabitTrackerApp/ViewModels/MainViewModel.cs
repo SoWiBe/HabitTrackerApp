@@ -18,7 +18,7 @@ public class MainViewModel : BaseViewModel, IMainVm
     
     public MainViewModel()
     {
-        
+        SetHabits();
     }
 
     public string Title
@@ -31,16 +31,26 @@ public class MainViewModel : BaseViewModel, IMainVm
     {
         get
         {
+            SetHabits();
             _habitVms = new SmartCollection<IHabitVm>();
             foreach (var habit in _habits)
             {
                 var habitVm =
                     AutoFac.Default.Container.Resolve<IHabitVm>(
-                        new TypedParameter(typeof(string), habit.Title));
+                        new TypedParameter(typeof(Habit), habit));
                 _habitVms.Add(habitVm);
             }
 
             return new ReadOnlyObservableCollection<IHabitVm>(_habitVms);
+        }
+    }
+
+    private void SetHabits()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            var habit = new Habit { Title = $"{i}", CountDays = 0};
+            _habits.Add(habit);
         }
     }
 }

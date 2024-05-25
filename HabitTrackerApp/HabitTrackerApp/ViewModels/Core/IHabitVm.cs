@@ -1,6 +1,8 @@
-﻿namespace HabitTrackerApp.ViewModels.Core;
+﻿using HabitTrackerApp.Models;
+
+namespace HabitTrackerApp.ViewModels.Core;
 
 public interface IHabitVm
 {
-    public string? Title { get; set; }
+    public Habit Habit { get; set; }
 }
