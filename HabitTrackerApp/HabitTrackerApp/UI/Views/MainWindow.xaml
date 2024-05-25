@@ -1,0 +1,49 @@
+﻿<Window x:Class="HabitTrackerApp.UI.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HabitTrackerApp"
+        xmlns:viewModels="clr-namespace:HabitTrackerApp.ViewModels"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+    <Grid Background="{DynamicResource MainBackgroundColor}">
+        <ItemsControl ItemsSource="{Binding Habits, UpdateSourceTrigger=PropertyChanged}"
+                      Height="800"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0"
+                                Height="50" Width="Auto"
+                                Style="{DynamicResource CellBorder}">
+                            <TextBlock 
+                                Padding="5"
+                                HorizontalAlignment="Center"
+                                Style="{DynamicResource BaseTextBlock}"
+                                Text="{Binding Habit.Title}"
+                                VerticalAlignment="Center">
+                                <TextBlock.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick" />
+                                </TextBlock.InputBindings>
+                            </TextBlock>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </Grid>
+</Window>

@@ -99,11 +99,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aleks\\RiderProjects\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
+      "projectUniqueName": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
       "projectName": "HabitTrackerApp",
-      "projectPath": "C:\\Users\\aleks\\RiderProjects\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
+      "projectPath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
       "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aleks\\RiderProjects\\HabitTrackerApp\\HabitTrackerApp\\obj\\",
+      "outputPath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config"

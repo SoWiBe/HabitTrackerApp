@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace HabitTrackerApp.UI.View
+namespace HabitTrackerApp.UI.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
