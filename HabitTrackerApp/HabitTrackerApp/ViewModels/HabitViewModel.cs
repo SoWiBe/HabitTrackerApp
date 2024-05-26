@@ -86,7 +86,7 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
 
     private void CreateDayHabits()
     {
-        for(var i = 0; i <= _monthDays; i++)
+        for(var i = 0; i < _monthDays; i++)
         {
             var dh = new DayHabit
             {

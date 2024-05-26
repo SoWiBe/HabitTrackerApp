@@ -20,9 +20,10 @@ public class MainViewModel : BaseViewModel, IMainVm
     private SmartCollection<IHabitVm> _habitVms;
 
     private SolidColorBrush _firstColor;
-    private SolidColorBrush
+    private SolidColorBrush _secondColor;
 
- _secondColor;
+    private int _monthDays = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+    private List<Day> _mdList = new();
 
     public MainViewModel()
     {
@@ -49,15 +50,26 @@ public class MainViewModel : BaseViewModel, IMainVm
                     color = _secondColor;
                 
                 var habitVm = AutoFac.Default.Container.Resolve<IHabitVm>(
-                    new TypedParameter(typeof(SolidColorBrush), color), new TypedParameter(typeof(int), 30));
+                    new TypedParameter(typeof(SolidColorBrush), color), new TypedParameter(typeof(int), 
+                       _monthDays));
                 _habitVms.Add(habitVm);
             }
 
             return new ReadOnlyObservableCollection<IHabitVm>(_habitVms);
         }
     }
-
-    public ReadOnlyObservableCollection<int> HabitDays { get; }
+    
+    public List<Day> MonthDays
+    {
+        get
+        {
+            for (var i = 0; i < _monthDays; i++)
+            {
+                _mdList.Add(new Day{Number = i+1});
+            }
+            return new List<Day>(_mdList);
+        }
+    }
 
     private void SetHabits()
     {
