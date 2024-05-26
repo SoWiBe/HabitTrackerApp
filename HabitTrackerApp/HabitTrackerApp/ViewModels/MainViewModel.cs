@@ -5,10 +5,10 @@ using System.Net.Mime;
 using System.Windows;
 using System.Windows.Media;
 using Autofac;
+using Common.Entities;
 using HabitTrackerApp.Abstractions;
 using HabitTrackerApp.Di;
 using HabitTrackerApp.Extensions;
-using HabitTrackerApp.Models;
 using HabitTrackerApp.ViewModels.Core;
 
 namespace HabitTrackerApp.ViewModels;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Media;
+using Common.Entities;
 using HabitTrackerApp.Commands;
-using HabitTrackerApp.Models;
 
 namespace HabitTrackerApp.ViewModels.Core;
 

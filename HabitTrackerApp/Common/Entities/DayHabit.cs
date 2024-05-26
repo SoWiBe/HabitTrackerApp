@@ -1,7 +1,6 @@
-﻿using System;
-using HabitTrackerApp.Models.Core;
+﻿using Common.Entities.Core;
 
-namespace HabitTrackerApp.Models;
+namespace Common.Entities;
 
 public class DayHabit : IEntityBase
 {

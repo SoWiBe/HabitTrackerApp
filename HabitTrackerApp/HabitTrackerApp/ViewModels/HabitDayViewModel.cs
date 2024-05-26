@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using Common.Entities;
 using HabitTrackerApp.Abstractions;
 using HabitTrackerApp.Commands;
-using HabitTrackerApp.Models;
 using HabitTrackerApp.ViewModels.Core;
 
 namespace HabitTrackerApp.ViewModels;

@@ -5,11 +5,11 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
 using Autofac;
+using Common.Entities;
 using HabitTrackerApp.Abstractions;
 using HabitTrackerApp.Commands;
 using HabitTrackerApp.Di;
 using HabitTrackerApp.Extensions;
-using HabitTrackerApp.Models;
 using HabitTrackerApp.UI.Views.Popups;
 using HabitTrackerApp.ViewModels.Core;
 
