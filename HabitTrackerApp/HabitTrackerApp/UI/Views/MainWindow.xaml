@@ -115,7 +115,7 @@
                                                     <TextBlock 
                                                         Padding="5"
                                                         HorizontalAlignment="Center"
-                                                        Style="{DynamicResource BaseTextBlock}"
+                                                        Style="{DynamicResource AlternativeTextBlock}"
                                                         Text="{Binding Number}"
                                                         VerticalAlignment="Center">
                                                     </TextBlock>
