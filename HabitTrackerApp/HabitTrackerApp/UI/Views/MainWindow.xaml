@@ -14,36 +14,234 @@
         <viewModels:MainViewModel/>
     </Window.DataContext>
     <Grid Background="{DynamicResource MainBackgroundColor}">
-        <ItemsControl ItemsSource="{Binding Habits, UpdateSourceTrigger=PropertyChanged}"
-                      Height="800"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid HorizontalAlignment="Center"
+        
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Grid.Column="0" Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Border
+                Height="50" Width="250"
+                BorderThickness="0 0 0 1"
+                Style="{DynamicResource CellBorder}"
+                Background="{DynamicResource MainBackgroundColor}">
+                <TextBlock 
+                    Padding="5"
+                    HorizontalAlignment="Left"
+                    Style="{DynamicResource BaseTextBlock}"
+                    Text="MONTH"
+                    VerticalAlignment="Center">
+                </TextBlock>
+            </Border>
+            <Border
+                    Height="50" Width="250"
+                    BorderThickness="0 1 1 1"
+                    Style="{DynamicResource CellBorder}"
+                    Background="{DynamicResource MainBackgroundColor}">
+                <TextBlock 
+                    Padding="5"
+                    HorizontalAlignment="Left"
+                    Style="{DynamicResource BaseTextBlock}"
+                    Text="HABIT"
+                    VerticalAlignment="Center">
+                </TextBlock>
+            </Border>
+            <ItemsControl ItemsSource="{Binding Habits, UpdateSourceTrigger=PropertyChanged}"
+                          Height="600"
+                          HorizontalAlignment="Center"
                           VerticalAlignment="Center">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Border Grid.Column="0"
-                                Height="50" Width="Auto"
-                                Style="{DynamicResource CellBorder}">
-                            <TextBlock 
-                                Padding="5"
-                                HorizontalAlignment="Center"
-                                Style="{DynamicResource BaseTextBlock}"
-                                Text="{Binding Habit.Title}"
-                                VerticalAlignment="Center">
-                                <TextBlock.InputBindings>
-                                    <MouseBinding MouseAction="LeftClick" />
-                                </TextBlock.InputBindings>
-                            </TextBlock>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    BorderThickness="0 1 1 1"
+                                    Height="50" Width="250"
+                                    Style="{DynamicResource CellBorder}"
+                                    Background="{Binding BackgroundColor}">
+                                <TextBlock 
+                                    Padding="5"
+                                    HorizontalAlignment="Center"
+                                    Style="{DynamicResource BaseTextBlock}"
+                                    Text="{Binding Habit.Title}"
+                                    VerticalAlignment="Center">
+                                </TextBlock>
+                                <Border.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
+                                </Border.InputBindings>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Border
+                Height="50" Width="100"
+                BorderThickness="0 0 0 1"
+                Style="{DynamicResource CellBorder}"
+                Background="{DynamicResource MainBackgroundColor}">
+                <TextBlock 
+                    Padding="5"
+                    HorizontalAlignment="Left"
+                    Style="{DynamicResource BaseTextBlock}"
+                    Text="MONTH"
+                    Visibility="Collapsed"
+                    VerticalAlignment="Center">
+                </TextBlock>
+            </Border>
+             <ItemsControl ItemsSource="{Binding MonthDays, UpdateSourceTrigger=PropertyChanged}"
+                                      Height="50"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Border Grid.Column="0"
+                                                        BorderThickness="0 1 1 1"
+                                                        Height="50" Width="25"
+                                                        Style="{DynamicResource CellBorder}"
+                                                        Background="{DynamicResource MainBackgroundColor}">
+                                                    <TextBlock 
+                                                        Padding="5"
+                                                        HorizontalAlignment="Center"
+                                                        Style="{DynamicResource BaseTextBlock}"
+                                                        Text="{Binding Number}"
+                                                        VerticalAlignment="Center">
+                                                    </TextBlock>
+                                                    <Border.InputBindings>
+                                                        <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
+                                                    </Border.InputBindings>
+                                                </Border>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+            <ItemsControl ItemsSource="{Binding Habits, UpdateSourceTrigger=PropertyChanged}"
+                          Height="600"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ItemsControl ItemsSource="{Binding HabitDays, UpdateSourceTrigger=PropertyChanged}"
+                                      Height="50"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Border Grid.Column="0"
+                                                        BorderThickness="0 1 1 1"
+                                                        Height="50" Width="25"
+                                                        Style="{DynamicResource CellBorder}"
+                                                        Background="{Binding BackgroundColor}">
+                                                    <TextBlock 
+                                                        Padding="5"
+                                                        HorizontalAlignment="Center"
+                                                        Style="{DynamicResource BaseTextBlock}"
+                                                        Text=""
+                                                        VerticalAlignment="Center">
+                                                    </TextBlock>
+                                                    <Border.InputBindings>
+                                                        <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
+                                                    </Border.InputBindings>
+                                                </Border>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Border
+                Height="50" Width="100"
+                BorderThickness="0 0 0 1"
+                Style="{DynamicResource CellBorder}"
+                Background="{DynamicResource MainBackgroundColor}">
+                <TextBlock 
+                    Padding="5"
+                    HorizontalAlignment="Left"
+                    Style="{DynamicResource BaseTextBlock}"
+                    Text="MONTH"
+                    Visibility="Collapsed"
+                    VerticalAlignment="Center">
+                </TextBlock>
+            </Border>
+            <Border
+                    Height="50" Width="100"
+                    BorderThickness="1 1 0 1"
+                    Style="{DynamicResource CellBorder}"
+                    Background="{DynamicResource MainBackgroundColor}">
+                <TextBlock 
+                    Padding="5"
+                    HorizontalAlignment="Center"
+                    Style="{DynamicResource AlternativeTextBlock}"
+                    Text="TOTAL"
+                    VerticalAlignment="Center">
+                </TextBlock>
+            </Border>
+            <ItemsControl ItemsSource="{Binding Habits, UpdateSourceTrigger=PropertyChanged}"
+                          Height="600"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    BorderThickness="1 1 0 1"
+                                    Height="50" Width="100"
+                                    Style="{DynamicResource CellBorder}"
+                                    Background="{Binding BackgroundColor}">
+                                <TextBlock 
+                                    Padding="5"
+                                    HorizontalAlignment="Center"
+                                    Style="{DynamicResource BaseTextBlock}"
+                                    Text="{Binding Habit.CountDays}"
+                                    VerticalAlignment="Center">
+                                </TextBlock>
+                                <Border.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
+                                </Border.InputBindings>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
