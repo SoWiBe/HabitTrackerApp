@@ -25,6 +25,15 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
 
     private readonly List<DayHabit> _dayHabits = new();
     private SmartCollection<IHabitDayVm> _dayHabitsVms;
+    
+    private Action<Habit?> EventHabitDay => (habit) =>
+    {
+        if(habit is null)
+            return;
+
+        habit.CountDays++;
+    };
+
     public HabitViewModel(SolidColorBrush color, int monthDays, Habit? habit = null)
     {
         _habit = habit;
