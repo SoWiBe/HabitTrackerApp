@@ -72,7 +72,9 @@
                                         Text="{Binding Habit.Title}"
                                         VerticalAlignment="Center">
                                     </TextBlock>
-                                    <TextBox/>
+                                    <TextBox
+                                        VerticalAlignment="Center" HorizontalAlignment="Left"
+                                        Style="{DynamicResource CreateHabitTextBox}"/>
                                 </Grid>
                                 <Border.InputBindings>
                                     <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
