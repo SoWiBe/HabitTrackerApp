@@ -10,4 +10,12 @@
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Foreground" Value="{DynamicResource MainTextColor}" />
     </Style>
+    
+    <Style TargetType="TextBlock" x:Key="AlternativeTextBlock">
+        <Setter Property="FontFamily" Value="Nunito" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontStyle" Value="Normal" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{DynamicResource AlternativeTextColor}" />
+    </Style>
 </ResourceDictionary>

@@ -10,6 +10,6 @@
     <SolidColorBrush Color="#DDDDDD" x:Key="RowColor" />
     
     <Color x:Key="MainColor">#ffffff</Color>
-    <Color x:Key="AlternativeColor">#777777</Color>
+    <Color x:Key="AlternativeColor">#eeeeee</Color>
     
 </ResourceDictionary>
