@@ -7,4 +7,5 @@ public interface IMainVm
 {
     public string Title { get; set; }
     public ReadOnlyObservableCollection<IHabitVm> Habits { get;}
+    public ReadOnlyObservableCollection<int> HabitDays { get;}
 }

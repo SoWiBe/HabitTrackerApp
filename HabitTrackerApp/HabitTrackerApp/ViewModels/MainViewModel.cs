@@ -49,13 +49,15 @@ public class MainViewModel : BaseViewModel, IMainVm
                     color = _secondColor;
                 
                 var habitVm = AutoFac.Default.Container.Resolve<IHabitVm>(
-                    new TypedParameter(typeof(SolidColorBrush), color));
+                    new TypedParameter(typeof(SolidColorBrush), color), new TypedParameter(typeof(int), 30));
                 _habitVms.Add(habitVm);
             }
 
             return new ReadOnlyObservableCollection<IHabitVm>(_habitVms);
         }
     }
+
+    public ReadOnlyObservableCollection<int> HabitDays { get; }
 
     private void SetHabits()
     {

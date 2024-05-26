@@ -12,6 +12,7 @@ public class AutoFac
     {
         var builder = new ContainerBuilder();
         builder.RegisterType<HabitViewModel>().As<IHabitVm>();
+        builder.RegisterType<HabitDayViewModel>().As<IHabitDayVm>();
         Container = builder.Build();
     }
     
