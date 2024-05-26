@@ -160,15 +160,13 @@
                                                         Height="50" Width="25"
                                                         Style="{DynamicResource CellBorder}"
                                                         Background="{Binding BackgroundColor}">
-                                                    <TextBlock 
-                                                        Padding="5"
-                                                        HorizontalAlignment="Center"
-                                                        Style="{DynamicResource BaseTextBlock}"
-                                                        Text=""
-                                                        VerticalAlignment="Center">
-                                                    </TextBlock>
+                                                    <Image
+                                                        Height="30"
+                                                        Width="20"
+                                                        Visibility="{Binding VisibilitySuccess}"
+                                                        Source="../../Resources/Images/success.png"/>
                                                     <Border.InputBindings>
-                                                        <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
+                                                        <MouseBinding MouseAction="LeftClick" Command="{Binding SetHabitStatusCommand}"/>
                                                     </Border.InputBindings>
                                                 </Border>
                                             </Grid>
