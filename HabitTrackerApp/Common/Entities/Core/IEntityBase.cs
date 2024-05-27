@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HabitTrackerApp.Models.Core;
+﻿namespace Common.Entities.Core;
 
 public interface IEntityBase
 {

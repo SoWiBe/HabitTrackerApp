@@ -33,6 +33,16 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
       }
     }
   },
@@ -86,11 +96,17 @@
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Autofac >= 8.0.0"
+      "Autofac >= 8.0.0",
+      "Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -117,7 +133,11 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\Common\\Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

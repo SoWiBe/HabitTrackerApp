@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using HabitTrackerApp.Models;
+using Common.Entities;
 
 namespace HabitTrackerApp.ViewModels.Core;
 
