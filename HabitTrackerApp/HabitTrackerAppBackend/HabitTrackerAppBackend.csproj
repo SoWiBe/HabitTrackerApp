@@ -9,12 +9,12 @@
     <ItemGroup>
         <PackageReference Include="Autofac" Version="8.0.0" />
         <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.17" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Endpoints\" />
       <Folder Include="Infrastructure\Abstractions\" />
       <Folder Include="Infrastructure\ActionResults\" />
       <Folder Include="Infrastructure\Data\" />
