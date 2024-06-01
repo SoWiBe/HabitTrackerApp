@@ -53,3 +53,5 @@ C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\UI\Views\Popups\CreateHabitPopup.g.cs
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\UI\Views\Popups\CreateHabitPopup.baml
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\UI\Templates\TextBoxesTemplates.baml
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\bin\Debug\net7.0-windows\Common.dll
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\bin\Debug\net7.0-windows\Common.pdb
