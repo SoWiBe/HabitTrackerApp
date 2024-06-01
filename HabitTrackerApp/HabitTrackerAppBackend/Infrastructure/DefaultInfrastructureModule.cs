@@ -17,7 +17,18 @@ public class DefaultInfrastructureModule : Module
     private void RegisterCommonDependencies(ContainerBuilder builder)
     {
         builder.RegisterType<ExceptionHandlerMiddleware>().AsSelf().InstancePerLifetimeScope();
-
+        
+        builder.Register(c =>
+            {
+                var config = c.Resolve<IConfiguration>();
+            
+                var context = new AppMongoDbContext(config.GetConnectionString("Mongo"));
+                return context;
+            })
+            .AsSelf()
+            .As<IAppMongoDbContext>()
+            .InstancePerLifetimeScope();
+        
         var module = new ConfigurationModule(GetConfiguration());
         builder.RegisterModule(module);
     }
