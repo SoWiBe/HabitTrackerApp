@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "HabitTrackerApp/1.0.0": {
         "dependencies": {
-          "Autofac": "8.0.0"
+          "Autofac": "8.0.0",
+          "Common": "1.0.0"
         },
         "runtime": {
           "HabitTrackerApp.dll": {}
@@ -25,7 +26,12 @@
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/7.0.2": {}
+      "System.Diagnostics.DiagnosticSource/7.0.2": {},
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -47,6 +53,11 @@
       "sha512": "sha512-hYr3I9N9811e0Bjf2WNwAGGyTuAFbbTgX1RPLt/3Wbm68x3IGcX5Cl75CMmgT6WlNwLQ2tCCWfqYPpypjaf2xA==",
       "path": "system.diagnostics.diagnosticsource/7.0.2",
       "hashPath": "system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
