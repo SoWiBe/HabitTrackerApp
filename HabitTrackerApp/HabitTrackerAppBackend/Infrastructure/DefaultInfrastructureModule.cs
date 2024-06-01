@@ -2,6 +2,8 @@
 using HabitTrackerAppBackend.Infrastructure.Errors;
 using Autofac;
 using Autofac.Configuration;
+using HabitTrackerAppBackend.Infrastructure.Data;
+using HabitTrackerAppBackend.Infrastructure.Data.Core;
 using Microsoft.AspNetCore.Authentication;
 using Module = Autofac.Module;
 
@@ -22,11 +24,11 @@ public class DefaultInfrastructureModule : Module
             {
                 var config = c.Resolve<IConfiguration>();
             
-                var context = new AppMongoDbContext(config.GetConnectionString("Mongo"));
+                var context = new AppDbContext(config.GetConnectionString("Mongo"));
                 return context;
             })
             .AsSelf()
-            .As<IAppMongoDbContext>()
+            .As<IAppDbContext>()
             .InstancePerLifetimeScope();
         
         var module = new ConfigurationModule(GetConfiguration());

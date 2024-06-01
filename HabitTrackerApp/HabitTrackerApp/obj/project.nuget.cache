@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Qa1pZgYqkiG46SqsBng/emSRUTFSUBZzU0NXGQRDf4HhTp39swJU9s18uSRAqLohF92Se6hrR/5awsgll7lw7g==",
+  "dgSpecHash": "mdQVlxUluXtzk76kVfM3a6R/DRB7onOU7BltebltTGbJADk/eEFlwUGd8LdXLvVSXqHQL7KNZaTXRdis5byVAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aleks\\.nuget\\packages\\autofac\\8.0.0\\autofac.8.0.0.nupkg.sha512",
-    "C:\\Users\\aleks\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512"
+    "C:\\Users\\aleks\\.nuget\\packages\\mongodb.bson\\2.25.0\\mongodb.bson.2.25.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

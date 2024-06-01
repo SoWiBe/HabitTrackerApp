@@ -550,6 +550,9 @@
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "MongoDB.Bson": "2.25.0"
+        },
         "compile": {
           "bin/placeholder/Common.dll": {}
         },

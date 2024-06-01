@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qsYmN7Ckh9pfwTaW2NEiWajC7bLu9sRmOoWZ+b4mXr4X4lK/ymwUx2iIZYNhhG33Orz3y0m+Ff9tNKWveioEpg==",
+  "dgSpecHash": "dMjlNJ7AWshXCw4UWTcOh30fqR2z4TV4wR/JLcyeon6G4SU/j6BJVvOSqDhH5k5SxRq3u+UIn8gKiCFvsCxcBg==",
   "success": true,
   "projectFilePath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\Common\\Common.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\aleks\\.nuget\\packages\\mongodb.bson\\2.25.0\\mongodb.bson.2.25.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
