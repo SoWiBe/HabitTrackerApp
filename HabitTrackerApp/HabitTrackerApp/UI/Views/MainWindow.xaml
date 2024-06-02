@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:HabitTrackerApp"
         xmlns:viewModels="clr-namespace:HabitTrackerApp.ViewModels"
         mc:Ignorable="d"
-        WindowState="Maximized"
+        WindowState="Normal"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Height="800" Width="1200">
     <Window.DataContext>
         <viewModels:MainViewModel/>
     </Window.DataContext>
     <Grid Background="{DynamicResource MainBackgroundColor}">
-        
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
