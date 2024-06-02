@@ -45,7 +45,7 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
         var filter = Builders<Habit>.Filter.Eq("title", request.Title);
         var update = Builders<Habit>.Update.Set("days", days);
 
-        var result = await collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
+        await collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
         
         var habits = await collection.Find(_ => true).ToListAsync(cancellationToken: cancellationToken);
 
