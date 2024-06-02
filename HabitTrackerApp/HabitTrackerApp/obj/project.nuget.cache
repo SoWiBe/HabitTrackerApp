@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OTZF1b6QB5dVFnPf7zgRh/Z3U1rocFrXmE/EYHeLBT+JMWpugILc6wx3ckv2ftlgdr1j7SGJLkbd1KytAenv8Q==",
+  "dgSpecHash": "lx27n1h2ilYL4Djv6DrydvYVNunEZkSBeuZhIoJdcUnYr3CyaK9BO6QxkWwqJ8uXhOTzWlclKxj9LWKI/QlGvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\aleks\\OneDrive\\Рабочий стол\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp\\HabitTrackerApp.csproj",
   "expectedPackageFiles": [
@@ -21,12 +21,19 @@
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.2.0\\microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.2.0\\microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.0-preview.4.24266.19\\microsoft.bcl.asyncinterfaces.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0-preview.4.24266.19\\microsoft.extensions.configuration.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0-preview.4.24266.19\\microsoft.extensions.configuration.abstractions.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.configuration.binder\\9.0.0-preview.4.24266.19\\microsoft.extensions.configuration.binder.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.0-preview.4.24266.19\\microsoft.extensions.configuration.fileextensions.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.0-preview.4.24266.19\\microsoft.extensions.configuration.json.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0-preview.4.24266.19\\microsoft.extensions.dependencyinjection.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0-preview.4.24266.19\\microsoft.extensions.dependencyinjection.abstractions.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.1.0\\microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
-    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0-preview.4.24266.19\\microsoft.extensions.fileproviders.abstractions.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.0-preview.4.24266.19\\microsoft.extensions.fileproviders.physical.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.0-preview.4.24266.19\\microsoft.extensions.filesystemglobbing.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.http\\9.0.0-preview.4.24266.19\\microsoft.extensions.http.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\microsoft.extensions.logging\\9.0.0-preview.4.24266.19\\microsoft.extensions.logging.9.0.0-preview.4.24266.19.nupkg.sha512",
@@ -70,10 +77,11 @@
     "C:\\Users\\aleks\\.nuget\\packages\\system.runtime.interopservices\\4.1.0\\system.runtime.interopservices.4.1.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.0.0\\system.runtime.interopservices.runtimeinformation.4.0.0.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\system.text.encoding\\4.0.11\\system.text.encoding.4.0.11.nupkg.sha512",
-    "C:\\Users\\aleks\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.text.encodings.web\\9.0.0-preview.4.24266.19\\system.text.encodings.web.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.text.json\\9.0.0-preview.4.24266.19\\system.text.json.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\aleks\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
-    "C:\\Users\\aleks\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512"
+    "C:\\Users\\aleks\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }
