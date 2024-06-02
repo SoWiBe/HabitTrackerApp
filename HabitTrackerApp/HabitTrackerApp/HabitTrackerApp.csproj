@@ -38,6 +38,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Common\Common.csproj" />
+      <ProjectReference Include="..\HabitTrackerAppBackend\HabitTrackerAppBackend.csproj" />
     </ItemGroup>
 
 </Project>

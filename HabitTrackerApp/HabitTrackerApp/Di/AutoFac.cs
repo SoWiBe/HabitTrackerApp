@@ -5,6 +5,7 @@ using HabitTrackerApp.Repositories;
 using HabitTrackerApp.Repositories.Core;
 using HabitTrackerApp.ViewModels;
 using HabitTrackerApp.ViewModels.Core;
+using HabitTrackerAppBackend.Extensions;
 
 namespace HabitTrackerApp.Di;
 
@@ -24,6 +25,8 @@ public class AutoFac
     {
         var builder = new ContainerBuilder();
         
+        builder.AddConfiguration();
+        builder.AddHttpClientFactory();
         builder.RegisterType<MainViewModel>().As<IMainVm>();
         builder.RegisterType<HabitViewModel>().As<IHabitVm>();
         builder.RegisterType<CreateHabitViewModel>().As<ICreateHabitVm>();
