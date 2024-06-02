@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using HabitTrackerApp.Abstractions.Services;
+using HabitTrackerApp.ViewModels;
 
 namespace HabitTrackerApp.UI.Views
 {
