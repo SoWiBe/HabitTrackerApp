@@ -1,12 +1,15 @@
-﻿using Common.Entities.Core;
+﻿using System.ComponentModel.DataAnnotations;
+using Common.Entities.Core;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Common.Entities;
 
 public class DayHabit : IEntityBase
 {
-    public Guid Id { get; set; } = Guid.Empty;
+    [BsonId] [BsonGuidRepresentation(GuidRepresentation.Standard)] public Guid Id { get; set; } = Guid.NewGuid();
     
-    public Day Day { get; set; }
-    public Habit Habit { get; set; }
-    public bool IsComplete { get; set; } = false;
+    [Required] [BsonElement("day")] public Day Day { get; set; }
+    [Required] [BsonElement("habit")] public Habit Habit { get; set; }
+    [Required] [BsonElement("isComplete")] public bool IsComplete { get; set; } = false;
 }

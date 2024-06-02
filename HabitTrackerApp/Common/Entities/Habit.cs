@@ -9,5 +9,6 @@ public class Habit : IEntityBase
 {
     [BsonId] [BsonGuidRepresentation(GuidRepresentation.Standard)] public Guid Id { get; set; } = Guid.NewGuid();
     [Required] [BsonElement("title")] public string Title { get; set; }
-    [Required] [BsonElement("countDays")]public int CountDays { get; set; }
+    [Required] [BsonElement("countDays")] public int CountDays { get; set; }
+    [Required] [BsonElement("days")] public ICollection<DayHabit> Days { get; set; }
 }
