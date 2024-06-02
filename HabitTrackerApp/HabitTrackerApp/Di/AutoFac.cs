@@ -1,41 +1,43 @@
 ﻿using Autofac;
 using Common.Abstraction.Repositories;
 using Common.Repositories;
+using HabitTrackerApp.Abstractions.Services;
+using HabitTrackerApp.Extensions;
 using HabitTrackerApp.Repositories;
 using HabitTrackerApp.Repositories.Core;
+using HabitTrackerApp.Services;
 using HabitTrackerApp.ViewModels;
 using HabitTrackerApp.ViewModels.Core;
-using HabitTrackerAppBackend.Extensions;
 
 namespace HabitTrackerApp.Di;
 
-public class AutoFac
+public sealed class AutoFac
 {
-    public static AutoFac Default = new();
-
     private AutoFac()
     {
-        var builder = new ContainerBuilder();
-        builder.RegisterType<HabitViewModel>().As<IHabitVm>();
-        builder.RegisterType<HabitDayViewModel>().As<IHabitDayVm>();
-        Container = builder.Build();
+        Builder = new ContainerBuilder();
     }
+    public static AutoFac Default { get; } = new();
+    public ContainerBuilder Builder { get; }
+    public IContainer Container { get; private set; }
     
-    public static IContainer Configure()
+    public void Build()
     {
-        var builder = new ContainerBuilder();
+        Builder.AddConfiguration();
+        Builder.AddHttpClientFactory();
         
-        builder.AddConfiguration();
-        builder.AddHttpClientFactory();
-        builder.RegisterType<MainViewModel>().As<IMainVm>();
-        builder.RegisterType<HabitViewModel>().As<IHabitVm>();
-        builder.RegisterType<CreateHabitViewModel>().As<ICreateHabitVm>();
-        builder.RegisterType<GlobalSettings>().As<IGlobalSettings>();
-        builder.RegisterType<JsonRepository>().As<IJsonRepository>();
-        builder.RegisterType<ApiRepository>().As<IApiRepository>();
+        Builder.RegisterType<GlobalSettings>().As<IGlobalSettings>();
+        Builder.RegisterType<JsonRepository>().As<IJsonRepository>();
+        Builder.RegisterType<ApiRepository>().As<IApiRepository>();
         
-        return builder.Build();
+        Builder.RegisterType<HabitService>().As<IHabitService>();
+        
+        Builder.RegisterType<MainViewModel>().As<IMainVm>();
+        Builder.RegisterType<HabitViewModel>().As<IHabitVm>();
+        Builder.RegisterType<HabitDayViewModel>().As<IHabitDayVm>();
+        Builder.RegisterType<CreateHabitViewModel>().As<ICreateHabitVm>();
+
+        Container = Builder.Build();
     }
-    
-    public IContainer Container { get; }
+
 }

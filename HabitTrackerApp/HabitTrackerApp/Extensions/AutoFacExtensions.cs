@@ -1,7 +1,11 @@
-﻿using Autofac;
+﻿using System.IO;
+using System.Net.Http;
+using Autofac;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace HabitTrackerAppBackend.Extensions;
+namespace HabitTrackerApp.Extensions;
 
 public static class AutoFacExtensions
 {

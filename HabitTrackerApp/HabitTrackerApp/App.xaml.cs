@@ -15,11 +15,12 @@ namespace HabitTrackerApp
     /// </summary>
     public partial class App : Application
     {
-        private IContainer _container;
         protected override void OnStartup(StartupEventArgs e)
         {
+            
+            var builder = AutoFac.Default.Builder;
+            AutoFac.Default.Build();
             base.OnStartup(e);
-            _container = AutoFac.Configure();
         }
     }
 }

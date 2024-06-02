@@ -80,17 +80,7 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
 
     private void CreateHabit()
     {
-        var popup = new CreateHabitPopup();
-        popup.ShowDialog();
-        
-        var habit = new Habit
-        {
-            Title = "Test",
-            CountDays = 11
-        };
-        
-        _habit = habit;
-        RaisePropertyChanged(nameof(Habit));
+        MessageBox.Show(_habit.Title);
     }
 
     private void CreateDayHabits()

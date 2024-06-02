@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Net.Mime;
 using System.Windows;
 using System.Windows.Media;
 using Autofac;
 using Common.Entities;
 using HabitTrackerApp.Abstractions;
+using HabitTrackerApp.Abstractions.Services;
 using HabitTrackerApp.Di;
 using HabitTrackerApp.Extensions;
+using HabitTrackerApp.Services;
 using HabitTrackerApp.ViewModels.Core;
 
 namespace HabitTrackerApp.ViewModels;
 
 public class MainViewModel : BaseViewModel, IMainVm
 {
+    private readonly IHabitService _habitService;
     private string _title = "test";
     private readonly List<Habit> _habits = new();
     private SmartCollection<IHabitVm> _habitVms;
@@ -27,7 +31,7 @@ public class MainViewModel : BaseViewModel, IMainVm
 
     public MainViewModel()
     {
-        
+        SetHabits();
     }
 
     public string Title
@@ -41,7 +45,6 @@ public class MainViewModel : BaseViewModel, IMainVm
         get
         {
             SetColors();
-            SetHabits();
             _habitVms = new SmartCollection<IHabitVm>();
             for (var i = 0; i < _habits.Count; i++)
             {
@@ -51,7 +54,7 @@ public class MainViewModel : BaseViewModel, IMainVm
                 
                 var habitVm = AutoFac.Default.Container.Resolve<IHabitVm>(
                     new TypedParameter(typeof(SolidColorBrush), color), new TypedParameter(typeof(int), 
-                       _monthDays));
+                       _monthDays), new TypedParameter(typeof(Habit), _habits[i]));
                 _habitVms.Add(habitVm);
             }
 
@@ -71,13 +74,16 @@ public class MainViewModel : BaseViewModel, IMainVm
         }
     }
 
-    private void SetHabits()
+    private async void SetHabits()
     {
-        for (int i = 0; i < 12; i++)
-        {
-            var habit = new Habit { Title = $"Habit {i}", CountDays = 0};
-            _habits.Add(habit);
-        }
+        var service = AutoFac.Default.Container.Resolve<IHabitService>();
+
+        var habitsResponse = await service.GetHabits();
+        if(habitsResponse.IsError) return;
+
+        _habits.Clear();
+        _habits.AddRange(habitsResponse.Value.Habits);
+        RaisePropertyChanged(nameof(Habits));
     }
 
     private void SetColors()

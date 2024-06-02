@@ -65,16 +65,14 @@
                                     Style="{DynamicResource CellBorder}"
                                     Background="{Binding BackgroundColor}">
                                 <Grid>
-                                    <TextBlock 
-                                        Padding="5"
-                                        HorizontalAlignment="Center"
-                                        Style="{DynamicResource BaseTextBlock}"
-                                        Text="{Binding Habit.Title}"
-                                        VerticalAlignment="Center">
-                                    </TextBlock>
                                     <TextBox
                                         VerticalAlignment="Center" HorizontalAlignment="Left"
-                                        Style="{DynamicResource CreateHabitTextBox}"/>
+                                        Text="{Binding Habit.Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                        Style="{DynamicResource CreateHabitTextBox}">
+                                        <TextBox.InputBindings>
+                                            <KeyBinding Key="Enter" Command="{Binding CreateHabitCommand}" />
+                                        </TextBox.InputBindings>
+                                    </TextBox>
                                 </Grid>
                                 <Border.InputBindings>
                                     <MouseBinding MouseAction="LeftClick" Command="{Binding CreateHabitCommand}"/>
