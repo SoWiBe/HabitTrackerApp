@@ -11,25 +11,19 @@ namespace HabitTrackerApp.ViewModels;
 public class HabitDayViewModel : BaseViewModel, IHabitDayVm
 {
     private SolidColorBrush _solidColor;
-    private readonly DayHabit _dayHabit;
-    private string? _title;
+    private readonly DayHabit? _dayHabit;
     private bool _isSuccess = false;
 
     private RelayCommand _setHabitStatusCommand;
     private Action<Habit?> _eventHabit;
 
-    public HabitDayViewModel(SolidColorBrush solidColor,string? title = null)
+    public HabitDayViewModel(SolidColorBrush solidColor, DayHabit? dayHabit = null)
     {
         _solidColor = solidColor;
-        _title = title;
+        _dayHabit = dayHabit;
+        SetDayHabit();
     }
-
-    public string? Title
-    {
-        get => _title;
-        set => SetProperty(ref _title, value);
-    }
-
+    
     public SolidColorBrush BackgroundColor
     {
         get => _solidColor;
@@ -66,5 +60,13 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
 
         _isSuccess = !_isSuccess;
         RaisePropertyChanged(nameof(VisibilitySuccess));
+    }
+
+    private void SetDayHabit()
+    {
+        if (_dayHabit is not null)
+            _isSuccess = _dayHabit.IsComplete;
+        
+        RaisePropertyChanged(nameof(IsSuccess));
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
 using Autofac;
 using Common.Entities;
 using HabitTrackerApp.Abstractions;
+using HabitTrackerApp.Abstractions.Services;
 using HabitTrackerApp.Commands;
 using HabitTrackerApp.Di;
 using HabitTrackerApp.Extensions;
@@ -70,7 +72,7 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
             foreach (var dayHabit in _dayHabits)
             {
                 var dh = AutoFac.Default.Container.Resolve<IHabitDayVm>(new TypedParameter(typeof(SolidColorBrush),
-                    _backgroundColor));
+                    _backgroundColor), new TypedParameter(typeof(DayHabit), dayHabit));
                 _dayHabitsVms.Add(dh);
             }
             
@@ -93,8 +95,9 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
                 Habit = _habit,
                 IsComplete = false
             };
-            
+
             _dayHabits.Add(dh);
         }
+        RaisePropertyChanged(nameof(HabitDays));
     }
 }

@@ -7,7 +7,6 @@ namespace HabitTrackerApp.ViewModels.Core;
 
 public interface IHabitDayVm
 {
-    public string? Title { get; set; }
     public SolidColorBrush BackgroundColor { get; set; }
     public bool IsSuccess { get; set; }
     public DayHabit DayHabit { get; set; }
