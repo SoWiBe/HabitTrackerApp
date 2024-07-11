@@ -39,7 +39,7 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
         else _habit.CountDays--;
         
         RaisePropertyChanged(nameof(Habit));
-        _raiseEvent?.Invoke();
+        //_raiseEvent?.Invoke();
     };
 
     private Action? _raiseEvent;
