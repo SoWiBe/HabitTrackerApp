@@ -65,7 +65,7 @@
                                     Background="{Binding BackgroundColor}">
                                 <Grid>
                                     <TextBox
-                                        VerticalAlignment="Center" HorizontalAlignment="Left"
+                                        HorizontalAlignment="Left"
                                         Text="{Binding Habit.Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                         Style="{DynamicResource CreateHabitTextBox}">
                                         <TextBox.InputBindings>

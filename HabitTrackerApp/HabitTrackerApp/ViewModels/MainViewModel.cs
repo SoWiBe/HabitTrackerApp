@@ -76,13 +76,22 @@ public class MainViewModel : BaseViewModel, IMainVm
 
     private async void SetHabits()
     {
+        _habits.Clear();
+
         var service = AutoFac.Default.Container.Resolve<IHabitService>();
 
         var habitsResponse = await service.GetHabits();
-        if(habitsResponse.IsError) return;
+        if (!habitsResponse.IsError)
+        {
+            _habits.AddRange(habitsResponse.Value.Habits);
+        }
+        
+        for (var i = 0; i < 9; i++)
+        {
+            var habit = new Habit { };
+            _habits.Add(habit);
+        }
 
-        _habits.Clear();
-        _habits.AddRange(habitsResponse.Value.Habits);
         RaisePropertyChanged(nameof(Habits));
     }
 

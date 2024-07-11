@@ -1,10 +1,13 @@
 ﻿using Common.Entities.Core;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Common.Entities;
 
 public class Day : IEntityBase
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
+    [BsonId]
+    [BsonGuidRepresentation(GuidRepresentation.Standard)]
+    public Guid Id { get; set; } 
     public int Number { get; set; }
-    public IEnumerable<Habit>? Habits { get; set; }
 }
