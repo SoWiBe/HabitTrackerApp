@@ -101,6 +101,7 @@ C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\bin\Debug\net7.0-windows\HabitTrackerApp.deps.json
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\bin\Debug\net7.0-windows\HabitTrackerApp.runtimeconfig.json
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\bin\Debug\net7.0-windows\HabitTrackerApp.pdb
-C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\HabitTrackerApp.csproj.CopyComplete
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\HabitTrackerApp.genruntimeconfig.cache
 C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\ref\HabitTrackerApp.dll
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\HabitTrackerApp.sourcelink.json
+C:\Users\aleks\OneDrive\Рабочий стол\HabitTrackerApp\HabitTrackerApp\HabitTrackerApp\obj\Debug\net7.0-windows\HabitTra.01F77114.Up2Date

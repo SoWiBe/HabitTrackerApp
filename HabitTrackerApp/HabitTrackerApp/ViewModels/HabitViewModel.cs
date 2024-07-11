@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -34,6 +35,7 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
             return;
 
         habit.CountDays++;
+        RaisePropertyChanged(nameof(Habit));
     };
 
     public HabitViewModel(SolidColorBrush color, int monthDays, Habit? habit = null)
@@ -41,6 +43,9 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
         _habit = habit;
         _backgroundColor = color;
         _monthDays = monthDays;
+        
+        var createDayHabitsThread = new Thread(CreateDayHabits);
+        createDayHabitsThread.Start();
     }
     
     protected override void LoadingEvent()
@@ -66,13 +71,13 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
     {
         get
         {
-            CreateDayHabits();
+            
             _dayHabitsVms = new SmartCollection<IHabitDayVm>();
 
             foreach (var dayHabit in _dayHabits)
             {
                 var dh = AutoFac.Default.Container.Resolve<IHabitDayVm>(new TypedParameter(typeof(SolidColorBrush),
-                    _backgroundColor), new TypedParameter(typeof(DayHabit), dayHabit));
+                    _backgroundColor), new TypedParameter(typeof(DayHabit), dayHabit), new TypedParameter(typeof(Action<Habit?>), EventHabitDay));
                 _dayHabitsVms.Add(dh);
             }
             
@@ -87,17 +92,22 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
 
     private void CreateDayHabits()
     {
+        var monthDays = new List<DayHabit>();
+        
         for(var i = 0; i < _monthDays; i++)
         {
             var dh = new DayHabit
             {
-                Day = new Day { Number = i + 1 },
+                Id = Guid.NewGuid(),
+                Day = new Day { Number = 0 + 1 },
                 Habit = _habit,
                 IsComplete = false
             };
 
-            _dayHabits.Add(dh);
+            monthDays.Add(dh);
         }
+        
+        _dayHabits.AddRange(monthDays);
         RaisePropertyChanged(nameof(HabitDays));
     }
 }

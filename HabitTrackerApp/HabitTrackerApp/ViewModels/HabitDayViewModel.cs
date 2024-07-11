@@ -17,10 +17,11 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
     private RelayCommand _setHabitStatusCommand;
     private Action<Habit?> _eventHabit;
 
-    public HabitDayViewModel(SolidColorBrush solidColor, DayHabit? dayHabit = null)
+    public HabitDayViewModel(SolidColorBrush solidColor, DayHabit? dayHabit = null, Action<Habit?> eventHabit = null)
     {
         _solidColor = solidColor;
         _dayHabit = dayHabit;
+        _eventHabit = eventHabit;
         SetDayHabit();
     }
     
@@ -54,12 +55,11 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
         }
         
         _isSuccess = !_isSuccess;
+        */
         _eventHabit.Invoke(_dayHabit.Habit);
-        RaisePropertyChanged(nameof(VisibilitySuccess));
-         */
-
+        
         _isSuccess = !_isSuccess;
-        RaisePropertyChanged(nameof(VisibilitySuccess));
+        RaisePropertyChanged(nameof (VisibilitySuccess));
     }
 
     private void SetDayHabit()
