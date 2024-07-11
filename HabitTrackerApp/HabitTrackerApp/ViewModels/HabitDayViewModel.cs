@@ -48,16 +48,13 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
         if (_isSuccess)
         {
             _isSuccess = !_isSuccess;
-            _eventHabit.Invoke(null, false);
+            _eventHabit.Invoke(_dayHabit.Habit, false);
             RaisePropertyChanged(nameof(VisibilitySuccess));
             return;
         }
         
         _isSuccess = !_isSuccess;
-        
         _eventHabit.Invoke(_dayHabit.Habit, true);
-        
-        _isSuccess = !_isSuccess;
         RaisePropertyChanged(nameof (VisibilitySuccess));
     }
 

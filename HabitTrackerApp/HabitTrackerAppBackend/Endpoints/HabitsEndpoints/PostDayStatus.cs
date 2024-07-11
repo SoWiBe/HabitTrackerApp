@@ -60,7 +60,7 @@ public class PostDayStatusRequest
 {
     public const string Route = "/day/status";
     
-    [Required] [JsonPropertyName("habitId")] public string Title { get; set; }
+    [Required] [JsonPropertyName("title")] public string Title { get; set; }
     [Required] [JsonPropertyName("date")] public DateTime Date { get; set; }
     [Required] [JsonPropertyName("isComplete")] public bool IsComplete { get; set; }
 }

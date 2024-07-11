@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Common.Abstraction.Repositories;
+using Common.Entities.Core.Error;
 using Common.Entities.Errors;
 using HabitTrackerApp.Abstractions.Services;
 using HabitTrackerApp.Repositories.Core;
@@ -26,5 +27,15 @@ public class HabitService : IHabitService
             return result.FirstError;
 
         return result.Value;
+    }
+
+    public async Task<IErrorOr> PostDayStatus(PostDayStatusRequest request)
+    {
+        var url = _gs.ApiUrl + "/day/status";
+        var result = await _apiRepository.PostDataWithResponseAsync(url, request);
+        if (result.IsError)
+            return ErrorOr.From(result.FirstError);
+
+        return ErrorOr.From(result.FirstError);
     }
 }
