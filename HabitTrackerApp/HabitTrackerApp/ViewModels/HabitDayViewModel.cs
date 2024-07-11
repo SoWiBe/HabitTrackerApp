@@ -3,13 +3,16 @@ using System.Windows;
 using System.Windows.Media;
 using Common.Entities;
 using HabitTrackerApp.Abstractions;
+using HabitTrackerApp.Abstractions.Services;
 using HabitTrackerApp.Commands;
 using HabitTrackerApp.ViewModels.Core;
+using HabitTrackerAppBackend.Endpoints.HabitsEndpoints;
 
 namespace HabitTrackerApp.ViewModels;
 
 public class HabitDayViewModel : BaseViewModel, IHabitDayVm
 {
+    private readonly IHabitService _habitService;
     private SolidColorBrush _solidColor;
     private readonly DayHabit? _dayHabit;
     private bool _isSuccess = false;
@@ -17,8 +20,9 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
     private RelayCommand _setHabitStatusCommand;
     private Action<Habit?, bool> _eventHabit;
 
-    public HabitDayViewModel(SolidColorBrush solidColor, DayHabit? dayHabit = null, Action<Habit?, bool> eventHabit = null)
+    public HabitDayViewModel(IHabitService habitService, SolidColorBrush solidColor, DayHabit? dayHabit = null, Action<Habit?, bool> eventHabit = null)
     {
+        _habitService = habitService;
         _solidColor = solidColor;
         _dayHabit = dayHabit;
         _eventHabit = eventHabit;
@@ -43,11 +47,19 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
 
     public RelayCommand SetHabitStatusCommand => _setHabitStatusCommand ??= new RelayCommand(_ => SetHabitStatus());
 
-    private void SetHabitStatus()
+    private async void SetHabitStatus()
     {
         if (_isSuccess)
         {
             _isSuccess = !_isSuccess;
+            var result = await _habitService.PostDayStatus(new PostDayStatusRequest
+            {
+                Title = _dayHabit.Habit.Title,
+                Date = _dayHabit.Day.Date,
+                IsComplete = _isSuccess
+            });
+            if(result.IsError) return;
+            
             _eventHabit.Invoke(_dayHabit.Habit, false);
             RaisePropertyChanged(nameof(VisibilitySuccess));
             return;

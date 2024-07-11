@@ -10,4 +10,6 @@ public class Day : IEntityBase
     [BsonGuidRepresentation(GuidRepresentation.Standard)]
     public Guid Id { get; set; } 
     public int Number { get; set; }
+    
+    public DateTime Date { get; set; }
 }
