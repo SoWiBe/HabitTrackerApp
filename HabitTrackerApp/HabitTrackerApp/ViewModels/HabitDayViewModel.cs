@@ -55,7 +55,7 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
             var result = await _habitService.PostDayStatus(new PostDayStatusRequest
             {
                 Title = _dayHabit.Habit.Title,
-                Date = _dayHabit.Day.Date,
+                Number = _dayHabit.Day.Number,
                 IsComplete = _isSuccess
             });
             if(result.IsError) return;

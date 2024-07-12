@@ -39,7 +39,7 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
         {
             Habit = habit,
             IsComplete = request.IsComplete,
-            Day = new Day { Number = request.Date.Day }
+            Day = new Day { Number = request.Number }
         });
         
         var filter = Builders<Habit>.Filter.Eq("title", request.Title);
@@ -61,6 +61,6 @@ public class PostDayStatusRequest
     public const string Route = "/day/status";
     
     [Required] [JsonPropertyName("title")] public string Title { get; set; }
-    [Required] [JsonPropertyName("date")] public DateTime Date { get; set; }
+    [Required] [JsonPropertyName("date")] public int Number { get; set; }
     [Required] [JsonPropertyName("isComplete")] public bool IsComplete { get; set; }
 }
