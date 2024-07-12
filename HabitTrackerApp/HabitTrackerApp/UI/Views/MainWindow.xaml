@@ -230,7 +230,7 @@
                                     Padding="5"
                                     HorizontalAlignment="Center"
                                     Style="{DynamicResource BaseTextBlock}"
-                                    Text="{Binding Habit.CountDays}"
+                                    Text="{Binding Habit.CountDays, UpdateSourceTrigger=PropertyChanged}"
                                     VerticalAlignment="Center">
                                 </TextBlock>
                                 <Border.InputBindings>

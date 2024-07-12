@@ -29,8 +29,14 @@ public class MainViewModel : BaseViewModel, IMainVm
     private int _monthDays = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
     private List<Day> _mdList = new();
 
+    public Action RaiseEvent => () =>
+    {
+        RaisePropertyChanged(nameof(Habits));
+    };
+
     public MainViewModel()
     {
+        SetColors();
         SetHabits();
     }
 
@@ -44,7 +50,6 @@ public class MainViewModel : BaseViewModel, IMainVm
     {
         get
         {
-            SetColors();
             _habitVms = new SmartCollection<IHabitVm>();
             for (var i = 0; i < _habits.Count; i++)
             {
@@ -54,7 +59,7 @@ public class MainViewModel : BaseViewModel, IMainVm
                 
                 var habitVm = AutoFac.Default.Container.Resolve<IHabitVm>(
                     new TypedParameter(typeof(SolidColorBrush), color), new TypedParameter(typeof(int), 
-                       _monthDays), new TypedParameter(typeof(Habit), _habits[i]));
+                       _monthDays), new TypedParameter(typeof(Habit), _habits[i]), new TypedParameter(typeof(Action), RaiseEvent));
                 _habitVms.Add(habitVm);
             }
 

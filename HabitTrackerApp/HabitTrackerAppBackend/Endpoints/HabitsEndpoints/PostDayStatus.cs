@@ -11,7 +11,7 @@ using MongoDB.Driver;
 
 namespace HabitTrackerAppBackend.Endpoints.HabitsEndpoints;
 
-public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>.WithActionResult
+public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>.WithActionResult<PostDayStatusResponse>
 {
     private readonly IAppDbContext _appDbContext;
 
@@ -22,7 +22,8 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
     
     [AllowAnonymous]
     [HttpPost(PostDayStatusRequest.Route)]
-    public override async Task<ActionResult> HandleAsync(PostDayStatusRequest request, CancellationToken cancellationToken = default)
+    public override async Task<ActionResult<PostDayStatusResponse>> HandleAsync(PostDayStatusRequest request,
+        CancellationToken cancellationToken = default)
     {
         var db = _appDbContext.GetDatabase();
         var collection = db.GetCollection<Habit>("Habits");
@@ -39,7 +40,7 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
         {
             Habit = habit,
             IsComplete = request.IsComplete,
-            Day = new Day { Number = request.Date.Day }
+            Day = new Day { Number = request.Number }
         });
         
         var filter = Builders<Habit>.Filter.Eq("title", request.Title);
@@ -56,11 +57,16 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
     }
 }
 
+public class PostDayStatusResponse
+{
+    [JsonPropertyName("habit")] public Habit Habit { get; set; }
+}
+
 public class PostDayStatusRequest
 {
     public const string Route = "/day/status";
     
-    [Required] [JsonPropertyName("habitId")] public string Title { get; set; }
-    [Required] [JsonPropertyName("date")] public DateTime Date { get; set; }
+    [Required] [JsonPropertyName("title")] public string Title { get; set; }
+    [Required] [JsonPropertyName("date")] public int Number { get; set; }
     [Required] [JsonPropertyName("isComplete")] public bool IsComplete { get; set; }
 }

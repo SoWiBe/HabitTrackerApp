@@ -29,18 +29,24 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
     private readonly List<DayHabit> _dayHabits = new();
     private SmartCollection<IHabitDayVm> _dayHabitsVms;
     
-    private Action<Habit?> EventHabitDay => (habit) =>
+    
+    private Action<Habit?, bool> EventHabitDay => (habit, operation) =>
     {
-        if(habit is null)
-            return;
+        if(habit is null) return;
+        if (_habit == null) return;
 
-        habit.CountDays++;
+        if (operation) _habit.CountDays++;
+        else _habit.CountDays--;
+        
         RaisePropertyChanged(nameof(Habit));
+        //_raiseEvent?.Invoke();
     };
 
-    public HabitViewModel(SolidColorBrush color, int monthDays, Habit? habit = null)
+    private Action? _raiseEvent;
+    public HabitViewModel(SolidColorBrush color, int monthDays, Habit? habit = null, Action raiseEvent = null)
     {
         _habit = habit;
+        _raiseEvent = raiseEvent;
         _backgroundColor = color;
         _monthDays = monthDays;
         
@@ -71,13 +77,12 @@ public class HabitViewModel : BaseObservableElementViewModel, IHabitVm
     {
         get
         {
-            
             _dayHabitsVms = new SmartCollection<IHabitDayVm>();
 
             foreach (var dayHabit in _dayHabits)
             {
                 var dh = AutoFac.Default.Container.Resolve<IHabitDayVm>(new TypedParameter(typeof(SolidColorBrush),
-                    _backgroundColor), new TypedParameter(typeof(DayHabit), dayHabit), new TypedParameter(typeof(Action<Habit?>), EventHabitDay));
+                    _backgroundColor), new TypedParameter(typeof(DayHabit), dayHabit), new TypedParameter(typeof(Action<Habit?, bool>), EventHabitDay));
                 _dayHabitsVms.Add(dh);
             }
             
