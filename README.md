@@ -9,5 +9,6 @@
 - Calculating the number of days of habit
 
 ## UI PART
+# WPF
 ![image](https://github.com/user-attachments/assets/965e4f10-68b6-4d2e-9c50-ef581cf27f46)
 
