@@ -8,7 +8,12 @@
 - View habits by month
 - Calculating the number of days of habit
 
+## Stack
+- WPF (ui)
+- Asp.net (backend)
+- MongoDb (database)
+- AutoFac (dependency injection)
+
 ## UI PART
-# WPF
 ![image](https://github.com/user-attachments/assets/965e4f10-68b6-4d2e-9c50-ef581cf27f46)
 
