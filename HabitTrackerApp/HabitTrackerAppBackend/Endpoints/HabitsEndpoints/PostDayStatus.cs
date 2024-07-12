@@ -11,7 +11,7 @@ using MongoDB.Driver;
 
 namespace HabitTrackerAppBackend.Endpoints.HabitsEndpoints;
 
-public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>.WithActionResult
+public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>.WithActionResult<PostDayStatusResponse>
 {
     private readonly IAppDbContext _appDbContext;
 
@@ -22,7 +22,8 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
     
     [AllowAnonymous]
     [HttpPost(PostDayStatusRequest.Route)]
-    public override async Task<ActionResult> HandleAsync(PostDayStatusRequest request, CancellationToken cancellationToken = default)
+    public override async Task<ActionResult<PostDayStatusResponse>> HandleAsync(PostDayStatusRequest request,
+        CancellationToken cancellationToken = default)
     {
         var db = _appDbContext.GetDatabase();
         var collection = db.GetCollection<Habit>("Habits");
@@ -54,6 +55,11 @@ public class PostDayStatus : EndpointBaseAsync.WithRequest<PostDayStatusRequest>
             Habits = habits ?? new List<Habit>()
         });
     }
+}
+
+public class PostDayStatusResponse
+{
+    [JsonPropertyName("habit")] public Habit Habit { get; set; }
 }
 
 public class PostDayStatusRequest

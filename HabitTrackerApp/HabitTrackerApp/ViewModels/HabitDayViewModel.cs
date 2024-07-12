@@ -52,13 +52,13 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
         if (_isSuccess)
         {
             _isSuccess = !_isSuccess;
-            var result = await _habitService.PostDayStatus(new PostDayStatusRequest
+            var resultStatus = await _habitService.PostDayStatus(new PostDayStatusRequest
             {
                 Title = _dayHabit.Habit.Title,
                 Number = _dayHabit.Day.Number,
                 IsComplete = _isSuccess
             });
-            if(result.IsError) return;
+            if(resultStatus.IsError) return;
             
             _eventHabit.Invoke(_dayHabit.Habit, false);
             RaisePropertyChanged(nameof(VisibilitySuccess));
@@ -66,6 +66,14 @@ public class HabitDayViewModel : BaseViewModel, IHabitDayVm
         }
         
         _isSuccess = !_isSuccess;
+        var result = await _habitService.PostDayStatus(new PostDayStatusRequest
+        {
+            Title = _dayHabit.Habit.Title,
+            Number = _dayHabit.Day.Number,
+            IsComplete = _isSuccess
+        });
+        if(result.IsError) return;
+        
         _eventHabit.Invoke(_dayHabit.Habit, true);
         RaisePropertyChanged(nameof (VisibilitySuccess));
     }

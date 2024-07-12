@@ -32,10 +32,10 @@ public class HabitService : IHabitService
     public async Task<IErrorOr> PostDayStatus(PostDayStatusRequest request)
     {
         var url = _gs.ApiUrl + "/day/status";
-        var result = await _apiRepository.PostDataWithResponseAsync(url, request);
+        var result = await _apiRepository.PostDataWithResponseAsync<GetHabitsResponse>(url, request);
         if (result.IsError)
             return ErrorOr.From(result.FirstError);
 
-        return ErrorOr.From(result.FirstError);
+        return result;
     }
 }
